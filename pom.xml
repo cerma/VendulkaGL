@@ -38,14 +38,19 @@
     <build>
         <plugins>
             <plugin>
-                <!-- Build an executable JAR -->
+
+                <!-- Building an executable jar -->
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
                     <archive>
                         <manifest>
+
+                            <!-- give full qualified name of your main class-->
                             <mainClass>Spring.Main</mainClass>
+
                         </manifest>
                     </archive>
                 </configuration>
