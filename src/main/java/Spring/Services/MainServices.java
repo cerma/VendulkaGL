@@ -13,10 +13,11 @@ import java.util.List;
 
 @Service
 public class MainServices {
+private  String[] pole;
+private int GLzaokrouhlene;
 
 
-
-public Hodnoty vypocet(Hodnoty hodnota) throws IOException {
+public void vypocet(Hodnoty hodnota) throws IOException {
 
 
     List hodnoty = new ArrayList();
@@ -31,7 +32,7 @@ public Hodnoty vypocet(Hodnoty hodnota) throws IOException {
 
 
     String vysledek = hodnoty.get(0).toString();
-    String[] pole = vysledek.split("\t");
+    pole = vysledek.split("\t");
 
 
 
@@ -39,12 +40,51 @@ public Hodnoty vypocet(Hodnoty hodnota) throws IOException {
     System.out.println(aktualniGL);
 
     double aktualniGLmmol = aktualniGL/18;
-    int GLzaokrouhlene = (int) Math.round(aktualniGLmmol);
+    GLzaokrouhlene = (int) Math.round(aktualniGLmmol);
+    hodnota.setVyslednaGLhigh(null);
+    hodnota.setVyslednaGL(null);
+    hodnota.setVyslednaGLlow(null);
 
-    hodnota.setVyslednaGL(GLzaokrouhlene);
 
-    return null;
+    if (GLzaokrouhlene <=4){
+        hodnota.setVyslednaGLlow(GLzaokrouhlene);
+    }
+    else if(GLzaokrouhlene > 4 && GLzaokrouhlene <=8){
+        hodnota.setVyslednaGL(GLzaokrouhlene);
+    }
+    else if(GLzaokrouhlene > 8){
+        hodnota.setVyslednaGLhigh(GLzaokrouhlene);
+
+    }
+
+   // hodnota.setVyslednaGL(GLzaokrouhlene);
+
+
 }
+public void smajlik(Hodnoty hodnota){
+String trend = pole[3];
+
+if (trend.equals("down") && GLzaokrouhlene<6){
+    hodnota.setObrazek("low");
+}
+else if (trend.equals("flat") && GLzaokrouhlene<7){
+        hodnota.setObrazek("medium");
+    }
+   else if (trend.equals("down") && GLzaokrouhlene==7){
+        hodnota.setObrazek("medium");
+    }
+ else if ((trend.equals("flat")||trend.equals("down")) && (GLzaokrouhlene<=9)|| GLzaokrouhlene>=7){
+        hodnota.setObrazek("ok");
+    }
+ else
+     hodnota.setObrazek("high");
+
+
+
+
+
+}
+
 
 
 }

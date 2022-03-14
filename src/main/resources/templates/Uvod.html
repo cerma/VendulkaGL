@@ -70,10 +70,20 @@
 
 <!-- Begin page content -->
 <main class="flex-shrink-0"style="padding-top:60px">
-    <div class="container">
+    <div class="container text-center">
 
-
+        <p style="font-size:200px" class="text-center text-danger font-weight-bolder" th:text="${hodnoty.vyslednaGLlow}" />
         <p style="font-size:200px" class="text-center text-success font-weight-bolder" th:text="${hodnoty.vyslednaGL}" />
+        <p style="font-size:200px" class="text-center text-warning font-weight-bolder" th:text="${hodnoty.vyslednaGLhigh}" />
+       <div th:switch="${hodnoty.obrazek}">
+            <p th:case="'low'"><img th:src="@{/images/low.jpg}" alt=""></p>
+            <p th:case="'medium'"><img th:src="@{/images/medium.jpg}" alt=""></p>
+            <p th:case="'ok'"><img th:src="@{/images/ok.jpg}" alt=""></p>
+            <!-- * for default case -->
+            <p th:case="*"><img th:src="@{/images/high.jpg}" alt=""></p>
+       </div>
+
+      <!--  <img th:src="@{/images/low.jpg}" alt="">-->
 
     </div>
 </main>

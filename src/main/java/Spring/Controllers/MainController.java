@@ -19,6 +19,7 @@ public class MainController {
 @GetMapping()
     public String uvod(@ModelAttribute Hodnoty hodnota) throws IOException {
     mainServices.vypocet(hodnota);
+    mainServices.smajlik(hodnota);
 
     return "Uvod";
 

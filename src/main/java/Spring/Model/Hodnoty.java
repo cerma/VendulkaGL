@@ -4,7 +4,10 @@ import lombok.Data;
 
 @Data
 public class Hodnoty {
-    private int vyslednaGL;
+    private Integer vyslednaGLlow;
+    private Integer vyslednaGL;
+    private Integer vyslednaGLhigh;
+    private String obrazek;
 
 
 }
