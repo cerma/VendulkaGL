@@ -64,19 +64,19 @@ public void vypocet(Hodnoty hodnota) throws IOException {
 public void smajlik(Hodnoty hodnota){
 String trend = pole[3];
 
-if (trend.equals("down") && GLzaokrouhlene<6){
+if (trend.equals("Down") && GLzaokrouhlene<6){
     hodnota.setObrazek("low");
 }
-else if (trend.equals("flat") && GLzaokrouhlene<7){
+else if (trend.equals("Flat") && GLzaokrouhlene<7){
         hodnota.setObrazek("medium");
     }
-   else if (trend.equals("down") && GLzaokrouhlene==7){
+   else if (trend.equals("Down") && GLzaokrouhlene==7){
         hodnota.setObrazek("medium");
     }
- else if ((trend.equals("flat")||trend.equals("down")) && (GLzaokrouhlene<=9)|| GLzaokrouhlene>=7){
+ else if ((trend.equals("Flat")||trend.equals("Down")) && (GLzaokrouhlene<=9)|| GLzaokrouhlene>=7){
         hodnota.setObrazek("ok");
     }
- else
+else
      hodnota.setObrazek("high");
 
 
