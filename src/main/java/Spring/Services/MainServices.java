@@ -61,6 +61,7 @@ public void vypocet(Hodnoty hodnota) throws IOException {
 
 
 }
+//smajlici
 public void smajlik(Hodnoty hodnota){
 String trend = pole[3];
 
