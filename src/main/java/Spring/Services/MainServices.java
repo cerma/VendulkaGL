@@ -68,7 +68,7 @@ String trend = pole[3];
 if ((trend.contains("Down") || (trend.contains("Flat")) && GLzaokrouhlene<6)){
     hodnota.setObrazek("low");
 }
-else if ((GLzaokrouhlene==7 && GLzaokrouhlene==6)||(trend.contains("Down") || (trend.contains("Flat")))){
+else if ((GLzaokrouhlene==7 || GLzaokrouhlene==6)&&(trend.contains("Down") || (trend.contains("Flat")))){
         hodnota.setObrazek("medium");
     }
 
