@@ -65,15 +65,15 @@ public void vypocet(Hodnoty hodnota) throws IOException {
 public void smajlik(Hodnoty hodnota){
 String trend = pole[3];
 
-if (trend.contains("Down") && GLzaokrouhlene<6){
+if ((trend.contains("Down") || (trend.contains("Flat")) && GLzaokrouhlene<6)){
     hodnota.setObrazek("low");
 }
-else if ((trend.contains("Flat") && GLzaokrouhlene<7)||(trend.contains("Down") && GLzaokrouhlene==6)){
+else if ((GLzaokrouhlene==7 && GLzaokrouhlene==6)||(trend.contains("Down") || (trend.contains("Flat")))){
         hodnota.setObrazek("medium");
     }
 
 
- else if ((GLzaokrouhlene<=9 && GLzaokrouhlene>=7) || (trend.contains("Up") && GLzaokrouhlene <=8)) {
+ else if ((GLzaokrouhlene<=9 && GLzaokrouhlene>7) || (trend.contains("Up") && GLzaokrouhlene <=8)) {
         hodnota.setObrazek("ok");
     }
  else
