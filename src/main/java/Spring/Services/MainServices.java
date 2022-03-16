@@ -65,7 +65,7 @@ public void vypocet(Hodnoty hodnota) throws IOException {
 public void smajlik(Hodnoty hodnota){
 String trend = pole[3];
 
-if ((trend.contains("Down") || (trend.contains("Flat")) && GLzaokrouhlene<6)){
+if ((trend.contains("Down") || trend.contains("Flat")) && GLzaokrouhlene<6){
     hodnota.setObrazek("low");
 }
 else if ((GLzaokrouhlene==7 || GLzaokrouhlene==6)&&(trend.contains("Down") || (trend.contains("Flat")))){
